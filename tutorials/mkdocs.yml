@@ -1,0 +1,15 @@
+site_name: Byte Size Bio
+site_description: Short and simple bioinformatics tutorials
+
+markdown_extensions:
+- toc:
+    permalink: true
+- admonition
+- codehilite
+- extra
+
+extra_css:
+- css/custom.css
+
+nav:
+- Home: index.md
