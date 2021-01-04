@@ -42,9 +42,10 @@ jobs:
           python -m pip install nbconvert
           
       - name: convert notebooks and move them to docs
-        run: |
-          jupyter nbconvert --to markdown tutorials/staging/*.ipynb
-          mv tutorials/staging/* tutorials/docs/tutorials/
+        run: jupyter nbconvert --to markdown tutorials/staging/*.ipynb
+
+      - name: move files to tutorials folder
+        run: mv tutorials/staging/* tutorials/docs/tutorials
         
       - name: Commit and push if it changed
         run: |-
