@@ -52,7 +52,7 @@ jobs:
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
           git status
-          git add tutorials/site
+          git add tutorials/docs
           timestamp=$(date -u)
           git commit -m "Converting notebooks: ${timestamp}" || exit 0
           git push
