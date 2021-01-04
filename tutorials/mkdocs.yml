@@ -1,5 +1,20 @@
-site_name: Byte Size Bio
+site_name: bytesizebio
 site_description: Short and simple bioinformatics tutorials
+site_author: A. Sina Booeshaghi
+copyright: "Copyright &copy; 2020 - 2020 A. Sina Booeshaghi"
+repo_url: https://github.com/sbooeshaghi/bytesizebio
+repo_name: sbooeshaghi/bytesizebio
+
+theme:
+  name: material
+  palette:
+  - scheme: default
+    primary: blue grey
+    accent: amber
+  features:
+  - search.suggest
+  - search.highlight
+  language: en
 
 markdown_extensions:
 - toc:
@@ -8,8 +23,18 @@ markdown_extensions:
 - codehilite
 - extra
 
+extra:
+  social:
+    - type: "github"
+      icon: fontawesome/brands/github
+      link: "https://github.com/sbooeshaghi"
+    - type: "twitter"
+      icon: fontawesome/brands/twitter
+      link: "https://twitter.com/sinabooeshaghi"
+
 extra_css:
 - css/custom.css
+
 
 nav:
 - Home: index.md
