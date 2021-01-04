@@ -18,7 +18,7 @@
     
     
       
-        <title>Diagnostic results - bytesizebio</title>
+        <title>Diagnostic - bytesizebio</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Diagnostic results
+              Diagnostic
             
           </span>
         </div>
@@ -251,7 +251,7 @@
     
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Diagnostic results
+      Diagnostic
     </a>
     
   </li>
@@ -295,8 +295,11 @@
                   </a>
                 
                 
-                <h1 id="diagnostic-results">Diagnostic results<a class="headerlink" href="#diagnostic-results" title="Permanent link">&para;</a></h1>
-<p><a href="https://colab.research.google.com/github/pachterlab/BLCSBGLKP_2020/blob/master/notebooks/diagnostic.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+                <p><a href="https://colab.research.google.com/github/pachterlab/BLCSBGLKP_2020/blob/master/notebooks/diagnostic.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
+<h1 id="diagnostic-results">Diagnostic results<a class="headerlink" href="#diagnostic-results" title="Permanent link">&para;</a></h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pachterlab</span><span class="o">/</span><span class="n">BLCSBGLKP_2020</span><span class="o">.</span><span class="n">git</span>
 </code></pre></div>
 </td></tr></table>
@@ -885,7 +888,7 @@ For the sake of downstream plotting, we append the Twist RNA values to the real 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<p><img alt="png" src="../diagnostic_files/output_16_0.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_18_0.png" /></p>
 <h3 id="examine-relative-counts">Examine relative counts<a class="headerlink" href="#examine-relative-counts" title="Permanent link">&para;</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -904,7 +907,7 @@ For the sake of downstream plotting, we append the Twist RNA values to the real 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<p><img alt="png" src="../diagnostic_files/output_18_0.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_20_0.png" /></p>
 <h3 id="adjusted-relative-abundances">Adjusted relative abundances<a class="headerlink" href="#adjusted-relative-abundances" title="Permanent link">&para;</a></h3>
 <p>The logistic regression was performed on the log(X+1) counts and the train/test/split gives back matrices that are log(X+1). In order to make plotting nicer (ie loglog scale axis), we exponentiate the matrices. Given $X_l = \log(X+1)$  we wish to plot $\frac{(Y+1)^{w_2}}{(X+1)^{w_1}}$ vs the amount of Twist RNA. We can plot $\frac{(Y+1)^{w_2}}{(X+1)^{w_1}} = \frac{exp(Y_l)^{w_2}}{exp(X_l)^{w_1}}$ vs the amount of Twist RNA. </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
@@ -924,7 +927,7 @@ For the sake of downstream plotting, we append the Twist RNA values to the real 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<p><img alt="png" src="../diagnostic_files/output_21_0.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_23_0.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision: </span><span class="si">{:,.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recall:    </span><span class="si">{:,.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">)))</span>
@@ -1098,36 +1101,36 @@ For the sake of downstream plotting, we append the Twist RNA values to the real 
 <span class="c">Recall:    0.8947</span>
 </code></pre></div>
 
-<p><img alt="png" src="../diagnostic_files/output_26_1.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_2.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_3.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_1.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_2.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_3.png" /></p>
 <div class="codehilite"><pre><span></span><code><span class="err">Plate1  HEK293  N   ATCC_RNA</span>
 <span class="c">Score:     0.9571</span>
 <span class="c">Precision: 1.0000</span>
 <span class="c">Recall:    0.9388</span>
 </code></pre></div>
 
-<p><img alt="png" src="../diagnostic_files/output_26_5.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_6.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_7.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_5.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_6.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_7.png" /></p>
 <div class="codehilite"><pre><span></span><code><span class="err">Plate2  HEK293  S   Twist</span>
 <span class="c">Score:     0.9375</span>
 <span class="c">Precision: 0.9000</span>
 <span class="c">Recall:    0.9474</span>
 </code></pre></div>
 
-<p><img alt="png" src="../diagnostic_files/output_26_9.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_10.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_11.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_9.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_10.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_11.png" /></p>
 <div class="codehilite"><pre><span></span><code><span class="err">Plate2  HEK293  S   ATCC_RNA</span>
 <span class="c">Score:     0.8857</span>
 <span class="c">Precision: 0.9767</span>
 <span class="c">Recall:    0.8571</span>
 </code></pre></div>
 
-<p><img alt="png" src="../diagnostic_files/output_26_13.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_14.png" /></p>
-<p><img alt="png" src="../diagnostic_files/output_26_15.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_13.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_14.png" /></p>
+<p><img alt="png" src="../diagnostic_files/diagnostic_28_15.png" /></p>
 <h1 id="diagnostic-results-are-reported-as-probabilities">Diagnostic results are reported as probabilities<a class="headerlink" href="#diagnostic-results-are-reported-as-probabilities" title="Permanent link">&para;</a></h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;- virus&quot;</span><span class="p">,</span> <span class="s2">&quot;+ virus&quot;</span><span class="p">])</span>
 </code></pre></div>
@@ -1214,6 +1217,10 @@ For the sake of downstream plotting, we append the Twist RNA values to the real 
 </table>
 <p>70 rows × 2 columns</p>
 </div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</td></tr></table>
                 
               
               
