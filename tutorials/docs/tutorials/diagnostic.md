@@ -403,7 +403,9 @@ plt.show()
 ```
 
 
+    
 ![png](diagnostic_files/diagnostic_18_0.png)
+    
 
 
 ### Examine relative counts
@@ -421,7 +423,9 @@ plt.show()
 ```
 
 
+    
 ![png](diagnostic_files/diagnostic_20_0.png)
+    
 
 
 ### Adjusted relative abundances
@@ -441,7 +445,9 @@ plt.show()
 ```
 
 
+    
 ![png](diagnostic_files/diagnostic_23_0.png)
+    
 
 
 
@@ -580,15 +586,21 @@ for (p, l, g, c) in exp:
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_1.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_2.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_3.png)
+    
 
 
     Plate1	HEK293	N	ATCC_RNA
@@ -598,15 +610,21 @@ for (p, l, g, c) in exp:
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_5.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_6.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_7.png)
+    
 
 
     Plate2	HEK293	S	Twist
@@ -616,15 +634,21 @@ for (p, l, g, c) in exp:
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_9.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_10.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_11.png)
+    
 
 
     Plate2	HEK293	S	ATCC_RNA
@@ -634,15 +658,21 @@ for (p, l, g, c) in exp:
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_13.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_14.png)
+    
 
 
 
+    
 ![png](diagnostic_files/diagnostic_28_15.png)
+    
 
 
 # Diagnostic results are reported as probabilities
