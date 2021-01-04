@@ -43,7 +43,7 @@ jobs:
         run: jupyter nbconvert --to markdown tutorials/staging/*.ipynb
 
       - name: move files to tutorials folder
-        run: mv tutorials/staging/* tutorials/docs/tutorials
+        run: mv -f tutorials/staging/* tutorials/docs/tutorials
         
       - name: Commit and push if it changed
         run: |-
