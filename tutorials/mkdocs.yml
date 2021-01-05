@@ -43,4 +43,4 @@ extra_css:
 nav:
 - Home: index.md
 - Tutorials:
-  - tutorials/terminal_interacting_with_fastq_files.md
+  - Interacting with FASTQ files: tutorials/terminal_interacting_with_fastq_files.md
