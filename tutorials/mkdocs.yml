@@ -16,6 +16,8 @@ theme:
   - search.highlight
   language: en
 
+google_analytics: ["G-188DM447D7", "bytesize.bio"]
+
 markdown_extensions:
 - toc:
     permalink: true
