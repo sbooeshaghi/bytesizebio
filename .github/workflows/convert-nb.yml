@@ -7,7 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     paths:
-      - 'tutorials/staging/*.ipynb'
+      - 'tutorials/notebooks/*.ipynb'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,13 +38,17 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install nbconvert
-          
-      - name: convert notebooks and move them to docs
+      
+      - name: copy files to staging
+        run: cp tutorials/notebooks/*.ipynb tutorials/staging/
+        
+      - name: convert notebooks
         run: jupyter nbconvert --to markdown tutorials/staging/*.ipynb
 
       - name: move files to tutorials folder
         run: | 
           cp -r tutorials/staging/* tutorials/docs/tutorials
+          rm tutorials/staging/*
         
       - name: Commit and push if it changed
         run: |-
