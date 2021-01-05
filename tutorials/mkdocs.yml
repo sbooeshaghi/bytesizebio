@@ -9,7 +9,7 @@ theme:
   name: material
   palette:
   - scheme: default
-    primary: blue grey
+    primary: teal
     accent: amber
   features:
   - search.suggest
