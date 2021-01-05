@@ -46,3 +46,4 @@ nav:
 - Home: index.md
 - Tutorials:
   - Interacting with FASTQ files: tutorials/terminal_interacting_with_fastq_files.md
+  - Common FASTQ file tasks: tutorials/terminal_common_fastq_tasks.md
