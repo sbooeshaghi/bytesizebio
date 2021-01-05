@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#common-fastq-tasks" class="md-skip">
+        <a href="#common-fastq-file-tasks" class="md-skip">
           Skip to content
         </a>
       
@@ -561,13 +561,11 @@
                 
                 
                 <p><a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/notebooks/terminal_common_fastq_tasks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="common-fastq-tasks">Common FASTQ tasks<a class="headerlink" href="#common-fastq-tasks" title="Permanent link">&para;</a></h1>
+<h1 id="common-fastq-file-tasks">Common FASTQ file tasks<a class="headerlink" href="#common-fastq-file-tasks" title="Permanent link">&para;</a></h1>
 <p>FASTQ files are text files that contain biological sequences, usually nucleotides, and their associated quality scores. Often we'd like to perform various tasks on the files such as:</p>
 <ol>
-<li>finding the reverse complement,</li>
-<li>performing advanced sequence searching,</li>
-<li>converting FASTQ files to other formats,</li>
-<li></li>
+<li>extracting just the sequences,</li>
+<li>finding the reverse complement</li>
 </ol>
 <hr />
 <p><strong>tl;dr</strong> In this tutorial we introduce more advanced ways to manipulate and interact with FASTQ files</p>
@@ -584,15 +582,17 @@ ls -lht
 </code></pre></div>
 </td></tr></table>
 <div class="codehilite"><pre><span></span><code><span class="err">total 434M</span>
-<span class="err">-rw-r--r-- 1 root root 247M Jan  5 19:34 read2.fastq</span>
-<span class="err">-rw-r--r-- 1 root root 188M Jan  5 19:34 read1.fastq</span>
+<span class="err">-rw-r--r-- 1 root root 247M Jan  5 23:12 read2.fastq</span>
+<span class="err">-rw-r--r-- 1 root root 188M Jan  5 23:11 read1.fastq</span>
 <span class="err">drwxr-xr-x 1 root root 4.0K Dec 21 17:29 sample_data</span>
 </code></pre></div>
 
-<p>The <code>curl</code> command uses three options: 
-1.    <code>-L</code> tells curl to follow any redirects in case the file was moved,
-2.    <code>-s</code> tells curl to not print any logging information (i.e. the command is silent),
-3.    and the <code>-o</code> specifies the new name of the file to be saved to our machine.</p>
+<p>The <code>curl</code> command uses three options: </p>
+<ol>
+<li><code>-L</code> tells curl to follow any redirects in case the file was moved,</li>
+<li><code>-s</code> tells curl to not print any logging information (i.e. the command is silent),</li>
+<li>and the <code>-o</code> specifies the new name of the file to be saved to our machine.</li>
+</ol>
 <h2 id="printing-out-only-sequences">Printing out only sequences<a class="headerlink" href="#printing-out-only-sequences" title="Permanent link">&para;</a></h2>
 <p>Often times we care only about the sequences in the FASTQ files and nothing else. We are tasked with converting the FASTQ file into just a file of sequences.</p>
 <p>Recall that a FASTQ file is comprised of sequences of molecules and associated metadata. Each molecule is represented by four lines:</p>
