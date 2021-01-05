@@ -18,7 +18,7 @@
     
     
       
-        <title>Interacting with FASTQ files - bytesizebio</title>
+        <title>Common FASTQ file tasks - bytesizebio</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interacting-with-fastq-files" class="md-skip">
+        <a href="#common-fastq-tasks" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Interacting with FASTQ files
+              Common FASTQ file tasks
             
           </span>
         </div>
@@ -244,6 +244,19 @@
           
 
 
+
+  <li class="md-nav__item">
+    <a href="../terminal_interacting_with_fastq_files/" class="md-nav__link">
+      Interacting with FASTQ files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   
 
 
@@ -255,12 +268,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Interacting with FASTQ files
+        Common FASTQ file tasks
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Interacting with FASTQ files
+      Common FASTQ file tasks
     </a>
     
       
@@ -277,45 +290,79 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-curl-command" class="md-nav__link">
-    The curl command
+  <a href="#downloading-fastq-files-with-curl" class="md-nav__link">
+    Downloading FASTQ files with curl
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-fastq-files" class="md-nav__link">
-    Downloading FASTQ files
+  <a href="#printing-out-only-sequences" class="md-nav__link">
+    Printing out only sequences
   </a>
+  
+    <nav class="md-nav" aria-label="Printing out only sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-awk-command" class="md-nav__link">
+    The awk command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-modulo-operator" class="md-nav__link">
+    The modulo (%) operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-the-sequences-to-a-file" class="md-nav__link">
+    Saving the sequences to a file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interacting-with-fastq-files_1" class="md-nav__link">
-    Interacting with FASTQ files
+  <a href="#finding-the-reverse-complement" class="md-nav__link">
+    Finding the reverse complement
   </a>
   
-    <nav class="md-nav" aria-label="Interacting with FASTQ files">
+    <nav class="md-nav" aria-label="Finding the reverse complement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#useful-commands" class="md-nav__link">
-    Useful commands
+  <a href="#relevant-commands" class="md-nav__link">
+    Relevant commands
   </a>
   
-    <nav class="md-nav" aria-label="Useful commands">
+    <nav class="md-nav" aria-label="Relevant commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-gzip-command-and-the-gunzip-command" class="md-nav__link">
-    The gzip command and the gunzip command
+  <a href="#the-echo-command" class="md-nav__link">
+    The echo command
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-zcat-command" class="md-nav__link">
-    The zcat command
+  <a href="#the-tr-command" class="md-nav__link">
+    The tr command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rev-command" class="md-nav__link">
+    The rev command
   </a>
   
 </li>
@@ -326,36 +373,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#reading-fastq-files" class="md-nav__link">
-    Reading FASTQ files
+  <a href="#using-tr-rev-and-echo-together" class="md-nav__link">
+    Using tr, rev, and echo together
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fastq-format" class="md-nav__link">
-    FASTQ Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#counting-the-number-of-molecules-reads" class="md-nav__link">
-    Counting the number of molecules (reads)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-an-exact-sequence" class="md-nav__link">
-    Finding an exact sequence
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#number-lines-of-a-fastq-file" class="md-nav__link">
-    Number lines of a FASTQ file
+  <a href="#processing-all-sequences" class="md-nav__link">
+    Processing all sequences
   </a>
   
 </li>
@@ -376,19 +402,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../terminal_common_fastq_tasks/" class="md-nav__link">
-      Common FASTQ file tasks
-    </a>
   </li>
 
         
@@ -422,45 +435,79 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-curl-command" class="md-nav__link">
-    The curl command
+  <a href="#downloading-fastq-files-with-curl" class="md-nav__link">
+    Downloading FASTQ files with curl
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#downloading-fastq-files" class="md-nav__link">
-    Downloading FASTQ files
+  <a href="#printing-out-only-sequences" class="md-nav__link">
+    Printing out only sequences
   </a>
+  
+    <nav class="md-nav" aria-label="Printing out only sequences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-awk-command" class="md-nav__link">
+    The awk command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-modulo-operator" class="md-nav__link">
+    The modulo (%) operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-the-sequences-to-a-file" class="md-nav__link">
+    Saving the sequences to a file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interacting-with-fastq-files_1" class="md-nav__link">
-    Interacting with FASTQ files
+  <a href="#finding-the-reverse-complement" class="md-nav__link">
+    Finding the reverse complement
   </a>
   
-    <nav class="md-nav" aria-label="Interacting with FASTQ files">
+    <nav class="md-nav" aria-label="Finding the reverse complement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#useful-commands" class="md-nav__link">
-    Useful commands
+  <a href="#relevant-commands" class="md-nav__link">
+    Relevant commands
   </a>
   
-    <nav class="md-nav" aria-label="Useful commands">
+    <nav class="md-nav" aria-label="Relevant commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-gzip-command-and-the-gunzip-command" class="md-nav__link">
-    The gzip command and the gunzip command
+  <a href="#the-echo-command" class="md-nav__link">
+    The echo command
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-zcat-command" class="md-nav__link">
-    The zcat command
+  <a href="#the-tr-command" class="md-nav__link">
+    The tr command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rev-command" class="md-nav__link">
+    The rev command
   </a>
   
 </li>
@@ -471,36 +518,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#reading-fastq-files" class="md-nav__link">
-    Reading FASTQ files
+  <a href="#using-tr-rev-and-echo-together" class="md-nav__link">
+    Using tr, rev, and echo together
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fastq-format" class="md-nav__link">
-    FASTQ Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#counting-the-number-of-molecules-reads" class="md-nav__link">
-    Counting the number of molecules (reads)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-an-exact-sequence" class="md-nav__link">
-    Finding an exact sequence
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#number-lines-of-a-fastq-file" class="md-nav__link">
-    Number lines of a FASTQ file
+  <a href="#processing-all-sequences" class="md-nav__link">
+    Processing all sequences
   </a>
   
 </li>
@@ -529,24 +555,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/sbooeshaghi/bytesizebio/edit/master/docs/tutorials/terminal_interacting_with_fastq_files.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/sbooeshaghi/bytesizebio/edit/master/docs/tutorials/terminal_common_fastq_tasks.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <p><a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/notebooks/terminal_interacting_with_fastq_files.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<h1 id="interacting-with-fastq-files">Interacting with FASTQ files<a class="headerlink" href="#interacting-with-fastq-files" title="Permanent link">&para;</a></h1>
-<p>FASTQ files are text files that contain biological sequences, usually nucleotides, and their associated quality scores. The quality score is a measure of how accurate the base-call is for each letter in the sequence. For more information please see the <a href="https://en.wikipedia.org/wiki/FASTQ_format">wikipedia entry</a>.</p>
+                <p><a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/notebooks/terminal_common_fastq_tasks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<h1 id="common-fastq-tasks">Common FASTQ tasks<a class="headerlink" href="#common-fastq-tasks" title="Permanent link">&para;</a></h1>
+<p>FASTQ files are text files that contain biological sequences, usually nucleotides, and their associated quality scores. Often we'd like to perform various tasks on the files such as:</p>
+<ol>
+<li>finding the reverse complement,</li>
+<li>performing advanced sequence searching,</li>
+<li>converting FASTQ files to other formats,</li>
+<li></li>
+</ol>
 <hr />
-<p><strong>tl;dr</strong> In this tutorial we introduce ways to interact with FASTQ files by the command line.</p>
-<h2 id="the-curl-command">The <code>curl</code> command<a class="headerlink" href="#the-curl-command" title="Permanent link">&para;</a></h2>
-<p>We will use the <code>curl</code> command to download FASTQ files to our machine. <a href="https://curl.se/"><code>curl</code></a> is a command line tool that allows us to download files. It takes a URL as an argument and downloads the file to your local computer in the current directory. For most cases when downloading data with <code>curl</code> we will use the following syntax:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>curl -Ls -o outputfile.txt http://www.somewebsite.com/myfile.txt
-</code></pre></div>
-</td></tr></table>
-<p>Where the <code>-L</code> tells the command to follow "redirects" in case the file as been moved, <code>-s</code> tells the command to be silent and the <code>-o</code> tells the command the name of the file to be saved. </p>
-<h2 id="downloading-fastq-files">Downloading FASTQ files<a class="headerlink" href="#downloading-fastq-files" title="Permanent link">&para;</a></h2>
-<p>FASTQ files usually come in pairs. They are coloquially called "read 1" and "read 2". This naming refers to the order in which the molecules were sequenced. We won't cover the many ways in which FASTQ files can be generated in this tutorial but for more details please check out these resources: <a href="https://web.archive.org/web/20200414070028/https://www.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/miseq/indexed-sequencing-overview-guide-15057455-06.pdf">Illumina documentation</a>, <a href="https://ngsc.med.upenn.edu/faqs-mini/FASTQ-Files.html">Next Generation Sequencing Core @UPenn</a>.</p>
+<p><strong>tl;dr</strong> In this tutorial we introduce more advanced ways to manipulate and interact with FASTQ files</p>
+<h2 id="downloading-fastq-files-with-curl">Downloading FASTQ files with <code>curl</code><a class="headerlink" href="#downloading-fastq-files-with-curl" title="Permanent link">&para;</a></h2>
+<p>We will use the <code>curl</code> command to download FASTQ files to our machine. <a href="https://curl.se/"><code>curl</code></a> is a command line tool that allows us to download files. It takes a URL as an argument and downloads the file to your local computer in the current directory.</p>
+<p>FASTQ files usually come in pairs, known as "read 1" and "read 2". This naming convention originates from the order in which the molecules in a sequencing machine are sequenced.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -557,84 +584,19 @@ ls -lht
 </code></pre></div>
 </td></tr></table>
 <div class="codehilite"><pre><span></span><code><span class="err">total 434M</span>
-<span class="err">-rw-r--r-- 1 root root 247M Jan  5 06:55 read2.fastq</span>
-<span class="err">-rw-r--r-- 1 root root 188M Jan  5 06:55 read1.fastq</span>
+<span class="err">-rw-r--r-- 1 root root 247M Jan  5 19:34 read2.fastq</span>
+<span class="err">-rw-r--r-- 1 root root 188M Jan  5 19:34 read1.fastq</span>
 <span class="err">drwxr-xr-x 1 root root 4.0K Dec 21 17:29 sample_data</span>
 </code></pre></div>
 
-<h2 id="interacting-with-fastq-files_1">Interacting with FASTQ files<a class="headerlink" href="#interacting-with-fastq-files_1" title="Permanent link">&para;</a></h2>
-<p>FASTQ files can be quite large, often on the order of tens to hundreds of gigabytes, therefore it is impractical to open them up and view them in a text editor. For this reason FASTQ files are often "compressed" to save storage space. The type of compression is colloquially called "gzip" compression to refer to the command line tool that compresses files.</p>
-<h3 id="useful-commands">Useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h3>
-<h4 id="the-gzip-command-and-the-gunzip-command">The <code>gzip</code> command and the <code>gunzip</code> command<a class="headerlink" href="#the-gzip-command-and-the-gunzip-command" title="Permanent link">&para;</a></h4>
-<p>Often times FASTQ files end with <code>.fastq.gz</code>. This means that they have been compressed with the <a href="https://www.gnu.org/software/gzip/"><code>gzip</code></a> command. They can be decompressed them with the <a href="https://linux.die.net/man/1/gunzip"><code>gunzip</code></a> command. Though most of the time we don't want to decompress them since that would require a lot of space. The syntax for decompressing and compressing a file in most cases will look like the following:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gunzip file.fastq.gz 
-gzip file.fastq
-</code></pre></div>
-</td></tr></table>
-<p>Our files are currently decompressed. Let's see how much space we save by compressing them.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-ls -lht
-gzip read1.fastq
-gzip read2.fastq
-ls -lht
-</code></pre></div>
-</td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">total 434M</span>
-<span class="err">-rw-r--r-- 1 root root 247M Jan  5 06:55 read2.fastq</span>
-<span class="err">-rw-r--r-- 1 root root 188M Jan  5 06:55 read1.fastq</span>
-<span class="err">drwxr-xr-x 1 root root 4.0K Dec 21 17:29 sample_data</span>
-<span class="err">total 74M</span>
-<span class="err">-rw-r--r-- 1 root root  47M Jan  5 06:55 read2.fastq.gz</span>
-<span class="err">-rw-r--r-- 1 root root  28M Jan  5 06:55 read1.fastq.gz</span>
-<span class="err">drwxr-xr-x 1 root root 4.0K Dec 21 17:29 sample_data</span>
-</code></pre></div>
-
-<p>The <code>read1</code> FASTQ file went from 188 Megabytes in size (decompressed, <code>read1.fastq</code>) to 28 Megabytes in size (compressed, <code>read1.fastq.gz</code>) and the <code>read2</code> FASTQ file went from 247 Megabytes (decompressed, <code>read2.fastq</code>) to 47 Megabytes (compressed, <code>read2.fastq.gz</code>). The <code>read1</code> file was compressed by a factor of 6.7 and the <code>read2</code> file was compressed by a factor of 5.2.</p>
-<h4 id="the-zcat-command">The <code>zcat</code> command<a class="headerlink" href="#the-zcat-command" title="Permanent link">&para;</a></h4>
-<p>Since we almost always want to keep our FASTQ files compressed but we still want to be able to read them we will use a modified version of the <code>cat</code> command but for files that have been compressed with <code>gzip</code>. The <a href="https://linux.die.net/man/1/zcat"><code>zcat</code></a> command does exactly the same thing to a file as the <code>cat</code>, namely it prints the contents of the file to the screen. The difference, however is that the <code>zcat</code> command expects a compressed file. The syntax looks like this:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>zcat file.fastq.gz
-</code></pre></div>
-</td></tr></table>
-<h3 id="reading-fastq-files">Reading FASTQ files<a class="headerlink" href="#reading-fastq-files" title="Permanent link">&para;</a></h3>
-<p>If we simply use <code>zcat</code> as above it will print the whole file to the screen so instead we "pipe" the output of the zcat command to the <code>head</code> command. We don't conver pipes in this video but there are a lot of great resources covering them. Here is a <a href="https://www.youtube.com/watch?v=bKzonnwoR2I">nice video</a> explaining pipes.</p>
-<p>The <code>head</code> command just stops the process of printing after a certain number of lines. The default is 10 lines.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-zcat read1.fastq.gz <span class="p">|</span> head
-</code></pre></div>
-</td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">@SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
-<span class="err">ACATCNGTCGAGAACGATCGTGTCCG</span>
-<span class="err">+SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
-<span class="err">AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
-<span class="err">@SRR8611943.2 NS500272:478:HVL5HBGX5:1:11101:20079:1043 length=26</span>
-<span class="err">TCAGCNCCAACTGCTAGTCTTTCCCT</span>
-<span class="err">+SRR8611943.2 NS500272:478:HVL5HBGX5:1:11101:20079:1043 length=26</span>
-<span class="err">AAAAA#EEEEEE6EEEEEEEEEEEEE</span>
-<span class="err">@SRR8611943.3 NS500272:478:HVL5HBGX5:1:11101:10651:1043 length=26</span>
-<span class="err">TGAAANATCACGCGGTTCATCAGTAG</span>
-</code></pre></div>
-
-<p>We can change the number of lines printed by <code>head</code> by specifying a <code>-n</code> option:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-zcat read1.fastq.gz <span class="p">|</span> head -n <span class="m">4</span>
-</code></pre></div>
-</td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">@SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
-<span class="err">ACATCNGTCGAGAACGATCGTGTCCG</span>
-<span class="err">+SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
-<span class="err">AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
-</code></pre></div>
-
-<h3 id="fastq-format">FASTQ Format<a class="headerlink" href="#fastq-format" title="Permanent link">&para;</a></h3>
-<p>Every four lines in a FASTQ file represent one molecule that was sequenced.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<p>The <code>curl</code> command uses three options: 
+1.    <code>-L</code> tells curl to follow any redirects in case the file was moved,
+2.    <code>-s</code> tells curl to not print any logging information (i.e. the command is silent),
+3.    and the <code>-o</code> specifies the new name of the file to be saved to our machine.</p>
+<h2 id="printing-out-only-sequences">Printing out only sequences<a class="headerlink" href="#printing-out-only-sequences" title="Permanent link">&para;</a></h2>
+<p>Often times we care only about the sequences in the FASTQ files and nothing else. We are tasked with converting the FASTQ file into just a file of sequences.</p>
+<p>Recall that a FASTQ file is comprised of sequences of molecules and associated metadata. Each molecule is represented by four lines:</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>@SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26
@@ -643,64 +605,188 @@ ACATCNGTCGAGAACGATCGTGTCCG
 AAAAA#EEEEEEEEEEEEEEEEEEEE
 </code></pre></div>
 </td></tr></table>
-<p>The first line is the molecule identifier, the second line is the actual sequence of the molecule, the third line starts with a <code>+</code> sign and provides optional information, and the fourth line is the quality score of the sequence. Note that the quality score must be the same length of the molecule. To learn more about quality scores please check out the <a href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/QualityScoreEncoding_swBS.htm">Illumina documentation</a>.</p>
-<h3 id="counting-the-number-of-molecules-reads">Counting the number of molecules (reads)<a class="headerlink" href="#counting-the-number-of-molecules-reads" title="Permanent link">&para;</a></h3>
-<p>A common task for bioinformaticians is to count the number of reads (also known as the number of molecules) in a FASTQ file. This means we need to count the number of lines in the FASTQ file and then divide by four, since a read is represented by four lines.</p>
-<p>We will use the <a href="https://linuxize.com/post/linux-wc-command/"><code>wc</code></a> command to count the number of lines in a file. The <code>wc</code> command is a commandline tool to count the number of words, characters, and lines in a file. The syntax for counting lines in a file is the following:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wc -l myfile.txt
+The first line is the molecule identifier, the second line is the actual sequence of the molecule, the third line starts with a + sign and provides optional information, and the fourth line is the quality score of the sequence. Note that the quality score must be the same length of the molecule. </p>
+<p>So we need to figure out a way to print the sequence (line 2) and every 4 lines after that.</p>
+<h3 id="the-awk-command">The <code>awk</code> command<a class="headerlink" href="#the-awk-command" title="Permanent link">&para;</a></h3>
+<p>The <code>awk</code> command is a commandline tool for advanced processing of text files. It can perform many tasks and we will use it for printing out only the sequences from the FASTQ files. <code>awk</code> operates on a line-by-line basis and treats each line as a collection of "columns" separated by a "separator" such as a space, a comma, or a tab. In the simplest case we can print out every line input to awk by printing the <code>0th</code> column: </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>awk &#39;{print $0}&#39; file.txt
 </code></pre></div>
 </td></tr></table>
-<p>We will use the <code>wc</code> command to count the number of lines in the FASTQ file and then we will divide by four to get the number of reads.</p>
+<p>Let's use it on our FASTQ files. If you recall, a fastq file that has not been compressed with <code>gzip</code> is simply a text file. Since we don't want the entire contents of the file to be printed to the screen, we can limit the number of lines with the <code>head</code> command.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+awk <span class="s1">&#39;{print $0}&#39;</span> read1.fastq <span class="p">|</span> head -n <span class="m">4</span>
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">@SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
+<span class="err">ACATCNGTCGAGAACGATCGTGTCCG</span>
+<span class="err">+SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
+<span class="err">AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
+</code></pre></div>
+
+<p>The <code>awk</code> command also has a built-in variable called <code>NR</code>. This variable stores the current line number. We can also print it out:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+awk <span class="s1">&#39;{print NR, $0}&#39;</span> read1.fastq <span class="p">|</span> head -n <span class="m">12</span>
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">1 @SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
+<span class="err">2 ACATCNGTCGAGAACGATCGTGTCCG</span>
+<span class="err">3 +SRR8611943.1 NS500272:478:HVL5HBGX5:1:11101:9611:1040 length=26</span>
+<span class="err">4 AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
+<span class="err">5 @SRR8611943.2 NS500272:478:HVL5HBGX5:1:11101:20079:1043 length=26</span>
+<span class="err">6 TCAGCNCCAACTGCTAGTCTTTCCCT</span>
+<span class="err">7 +SRR8611943.2 NS500272:478:HVL5HBGX5:1:11101:20079:1043 length=26</span>
+<span class="err">8 AAAAA#EEEEEE6EEEEEEEEEEEEE</span>
+<span class="err">9 @SRR8611943.3 NS500272:478:HVL5HBGX5:1:11101:10651:1043 length=26</span>
+<span class="err">10 TGAAANATCACGCGGTTCATCAGTAG</span>
+<span class="err">11 +SRR8611943.3 NS500272:478:HVL5HBGX5:1:11101:10651:1043 length=26</span>
+<span class="err">12 AAAAA#EEEAEEEEEEEAEEEEEEEE</span>
+</code></pre></div>
+
+<h3 id="the-modulo-operator">The modulo (<code>%</code>) operator<a class="headerlink" href="#the-modulo-operator" title="Permanent link">&para;</a></h3>
+<p>Notice how the sequence of interest occurs on the 2nd line and then again on the 6th line and then again on the 10th line. The sequences are spaced four lines apart and start on line 2. We can be clever and print out only those lines using the modulo <code>%</code> operator. The modulo operator is the same as seen in python. Given two numbers <code>a</code> and <code>b</code>, the operation <code>a%b</code> first divides <code>a</code> by <code>b</code> and then returns the remainder. For example:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-zcat read1.fastq.gz <span class="p">|</span> wc -l
-zcat read2.fastq.gz <span class="p">|</span> wc -l
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%python
+a = 17
+b = 4
+print(f&quot;{a}/{b} = {a//b} with a remainder of {a%b}.&quot;)
+print(f&quot;In other words: {b}*{a//b} + {a%b} = {a}.&quot;)
 </code></pre></div>
 </td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">4000000</span>
-<span class="err">4000000</span>
+<div class="codehilite"><pre><span></span><code><span class="err">17/4 = 4 with a remainder of 1.</span>
+<span class="err">In other words: 4*4 + 1 = 17.</span>
 </code></pre></div>
 
-<p>Both read1 and read2 have 4,000,000 lines, this means that they have 1 million reads. For "paired-end" sequencing data where read 1 and read 2 are given, both FASTQ files will always have the same number of reads since sequneces from a single molecule are represented in both files.</p>
-<h3 id="finding-an-exact-sequence">Finding an exact sequence<a class="headerlink" href="#finding-an-exact-sequence" title="Permanent link">&para;</a></h3>
-<p>Another common task for bioinformaticians is to find an exact sequence in the FASTQ files. We will use the <code>grep</code> command along with the <code>zcat</code> command. The <a href="https://man7.org/linux/man-pages/man1/grep.1.html"><code>grep</code></a> command is a commandline tool that enables searching. The <code>grep</code> command can get complicated but most use cases can be covered by the following syntax:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>grep &quot;find this&quot; myfile.txt
+<p>To get every 4th line of the file we want to print out the lines when <code>NR%4==0</code>. We can declare the condition to print the line by writing the condition before the <code>{print}</code> in the following way:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>awk &#39;(condition){print $0}&#39; file.txt
 </code></pre></div>
 </td></tr></table>
-<p>Let's find the sequence <code>ATTAGGAGCCG</code> in <code>read1.fastq.gz</code>.</p>
+<p>Let's try it on our file:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-zcat read2.fastq.gz <span class="p">|</span> grep <span class="s2">&quot;ATTAGGAGCCG&quot;</span>
+awk <span class="s1">&#39;NR%4==0{print NR, $0}&#39;</span> read1.fastq <span class="p">|</span> head -n <span class="m">6</span>
 </code></pre></div>
 </td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">GAAGATGTTGTCGTGGATACTGAAATGCGTCGTCAAAAATTAGGAGCCGTTCTTTTG</span>
-<span class="err">GTCAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTCTCTCG</span>
-<span class="err">GCGTCGTCAAAAATTAGGAGCCGTTGGTTTGAAGAATCTTTTTTCTAATGGAAAGTG</span>
-<span class="err">GCGTCGTCAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTC</span>
-<span class="err">CAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTCTCTCGGA</span>
+<div class="codehilite"><pre><span></span><code><span class="err">4 AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
+<span class="err">8 AAAAA#EEEEEE6EEEEEEEEEEEEE</span>
+<span class="err">12 AAAAA#EEEAEEEEEEEAEEEEEEEE</span>
+<span class="err">16 AAAAA#EEEEEEEEEEEEEEEEEEEE</span>
+<span class="err">20 AAAAA#EEEEEEEEEEAEEEEEEEEE</span>
+<span class="err">24 AAA6A#EEEEAEEEAEE6EEEEEEEE</span>
 </code></pre></div>
 
-<h3 id="number-lines-of-a-fastq-file">Number lines of a FASTQ file<a class="headerlink" href="#number-lines-of-a-fastq-file" title="Permanent link">&para;</a></h3>
-<p>In the above example we found five reads that contain our sequence of interest but we don't know what line number they came from. We can figure this out by using the <code>nl</code> command. The <code>nl</code> command is a commandline tool to add line numbers to the file. The syntax is as follows:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>nl file.txt
-</code></pre></div>
-</td></tr></table>
-<p>Let's find out the line numbers where we found our sequence.</p>
+<p>Notice that this gives us the rows <code>4, 8, 12...</code>, i.e. the quality score. We need to shift the condition by 2 so that we get the sequence instead:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
-zcat read2.fastq.gz <span class="p">|</span> nl <span class="p">|</span> grep <span class="s2">&quot;ATTAGGAGCCG&quot;</span>
+awk <span class="s1">&#39;NR%4==2{print NR, $0}&#39;</span> read1.fastq <span class="p">|</span> head -n <span class="m">6</span>
 </code></pre></div>
 </td></tr></table>
-<div class="codehilite"><pre><span></span><code><span class="err">535046  GAAGATGTTGTCGTGGATACTGAAATGCGTCGTCAAAAATTAGGAGCCGTTCTTTTG</span>
-<span class="err">745522  GTCAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTCTCTCG</span>
-<span class="err">818990  GCGTCGTCAAAAATTAGGAGCCGTTGGTTTGAAGAATCTTTTTTCTAATGGAAAGTG</span>
-<span class="err">1654078 GCGTCGTCAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTC</span>
-<span class="err">1956810 CAAAAATTAGGAGCCGTTCTTTTGAAGACTCTTGTTTCTCTTGGAAAGTCTCTCGGA</span>
+<div class="codehilite"><pre><span></span><code><span class="err">2 ACATCNGTCGAGAACGATCGTGTCCG</span>
+<span class="err">6 TCAGCNCCAACTGCTAGTCTTTCCCT</span>
+<span class="err">10 TGAAANATCACGCGGTTCATCAGTAG</span>
+<span class="err">14 GCGCANCAGGCTACGATCGATCATGG</span>
+<span class="err">18 CTGATNCTCCTTTCTCATGGAGAATG</span>
+<span class="err">22 CGAGCNAAGTGAAGAGTGCGAAAGCC</span>
 </code></pre></div>
 
+<h3 id="saving-the-sequences-to-a-file">Saving the sequences to a file<a class="headerlink" href="#saving-the-sequences-to-a-file" title="Permanent link">&para;</a></h3>
+<p>Now if we want to save this as a new file we can direct the stream of text to a new file like so:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+awk <span class="s1">&#39;NR%4==2{print $0}&#39;</span> read1.fastq &gt; read1.txt
+</code></pre></div>
+</td></tr></table>
+<h2 id="finding-the-reverse-complement">Finding the reverse complement<a class="headerlink" href="#finding-the-reverse-complement" title="Permanent link">&para;</a></h2>
+<p>DNA (Dexoy-riboNucleic Acid) is a two-stranded biopolymer where each monormer is one of the four nucleotides</p>
+<ol>
+<li>Adenosine (<code>A</code>)</li>
+<li>Thymine   (<code>T</code>)</li>
+<li>Guanine   (<code>G</code>)</li>
+<li>Cytosine  (<code>C</code>).</li>
+</ol>
+<p>The strands have a directionality, commonly called to as the <code>3'</code> and <code>5'</code> ends which refers to the position of the carbon atoms in the pentose-sugar-ring. The <code>5'</code>-carbon usually has a phosphate group attached to it and the <code>3'</code>-carbon end usually has a hydroxyl (<code>OH</code>) group group attached to it. The nucleotides bind complementarily and run anti-parallel to each other. Here is an example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>5&#39; - A A T G G A C C T A C A C T G T C A - 3&#39;
+     | | | | | | | | | | | | | | | | | |
+3&#39; - T T A C C T G G A T G T G A C A G T - 5&#39;
+</code></pre></div>
+</td></tr></table>
+<p>Often bioinformaticians want to know the the reverse complement of a given sequence.</p>
+<h3 id="relevant-commands">Relevant commands<a class="headerlink" href="#relevant-commands" title="Permanent link">&para;</a></h3>
+<p>To find the reverse complement we will use two commands, <code>echo</code> and <code>tr</code>.</p>
+<h4 id="the-echo-command">The <code>echo</code> command<a class="headerlink" href="#the-echo-command" title="Permanent link">&para;</a></h4>
+<p>The <code>echo</code> command is a commandline tool that allows us to "print" whatever argument was supplied to it. For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+<span class="nb">echo</span> <span class="s2">&quot;Hello world&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">Hello world</span>
+</code></pre></div>
+
+<h4 id="the-tr-command">The <code>tr</code> command<a class="headerlink" href="#the-tr-command" title="Permanent link">&para;</a></h4>
+<p>The <code>tr</code> command is a commandline tool that is commonly referred to as the "translate" command. It will take in a set of letters and replace them with the new set. A common use case is to convert lowercase letters to uppercase letters. </p>
+<p><strong>Note</strong>: <code>tr</code> takes the text that you will convert from a pipe. We don't cover pipes in this video but here is an <a href="https://www.youtube.com/watch?v=bKzonnwoR2I">instructive video</a> on them.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+<span class="nb">echo</span> <span class="s2">&quot;aaaaaBBBCCCC&quot;</span> <span class="p">|</span> tr <span class="s2">&quot;a&quot;</span> <span class="s2">&quot;A&quot;</span> 
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">AAAAABBBCCCC</span>
+</code></pre></div>
+
+<h4 id="the-rev-command">The <code>rev</code> command<a class="headerlink" href="#the-rev-command" title="Permanent link">&para;</a></h4>
+<p>The <code>rev</code> command is a commandline tool that reverses the input lines. For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+<span class="nb">echo</span> <span class="s2">&quot;aaaaaBBBCCCC&quot;</span> <span class="p">|</span> rev
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">CCCCBBBaaaaa</span>
+</code></pre></div>
+
+<h3 id="using-tr-rev-and-echo-together">Using <code>tr</code>, <code>rev</code>, and <code>echo</code> together<a class="headerlink" href="#using-tr-rev-and-echo-together" title="Permanent link">&para;</a></h3>
+<p>We can now <code>echo</code> the sequence we want to convert into the <code>tr</code> command to find the complementary base and then pass it into the <code>rev</code> command to reverse the sequence.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+<span class="nb">echo</span> <span class="s2">&quot;AATGGACCTACACTGTCA&quot;</span> <span class="p">|</span> tr <span class="s2">&quot;ATGC&quot;</span> <span class="s2">&quot;TACG&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">TTACCTGGATGTGACAGT</span>
+</code></pre></div>
+
+<h3 id="processing-all-sequences">Processing all sequences<a class="headerlink" href="#processing-all-sequences" title="Permanent link">&para;</a></h3>
+<p>We are now armed with the tools to process all of the sequences in our <code>read1.txt</code> file that we generated earlier.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+cat read1.txt <span class="p">|</span> tr <span class="s2">&quot;ATGC&quot;</span> <span class="s2">&quot;TACG&quot;</span> <span class="p">|</span> rev <span class="p">|</span> head
+</code></pre></div>
+</td></tr></table>
+<div class="codehilite"><pre><span></span><code><span class="err">CGGACACGATCGTTCTCGACNGATGT</span>
+<span class="err">AGGGAAAGACTAGCAGTTGGNGCTGA</span>
+<span class="err">CTACTGATGAACCGCGTGATNTTTCA</span>
+<span class="err">CCATGATCGATCGTAGCCTGNTGCGC</span>
+<span class="err">CATTCTCCATGAGAAAGGAGNATCAG</span>
+<span class="err">GGCTTTCGCACTCTTCACTTNGCTCG</span>
+<span class="err">AGCTCTAACTTATGCCCTGCNATTCT</span>
+<span class="err">ACCGAAACGTAGTCGTAACTNGCTGA</span>
+<span class="err">TTTTGGAAACTGGATGACTGNTGTCA</span>
+<span class="err">GCCGATGTCCGCGCTAGACTNAAGGT</span>
+</code></pre></div>
+
+<p>And we can save these seqences as a new file:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%bash
+cat read1.txt <span class="p">|</span> tr <span class="s2">&quot;ATGC&quot;</span> <span class="s2">&quot;TACG&quot;</span> <span class="p">|</span> rev &gt; read1_revcomp.txt
+</code></pre></div>
+</td></tr></table>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>In this tutorial we learned how to interact with FASTQ files using built in shell commands to perform simple tasks. </p>
+<p>In summary we learned how to use the <code>awk</code> command along with the modulo (<code>%</code>) operator in order to convert a FASTQ file into a text file of just sequences. We then learned how to use the <code>echo</code>, <code>tr</code>, and <code>rev</code> command to find the reverse complement of the sequences in this file.</p>
                 
               
               
@@ -719,7 +805,7 @@ zcat read2.fastq.gz <span class="p">|</span> nl <span class="p">|</span> grep <s
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../terminal_interacting_with_fastq_files/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -728,25 +814,11 @@ zcat read2.fastq.gz <span class="p">|</span> nl <span class="p">|</span> grep <s
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Interacting with FASTQ files
               </div>
             </div>
           </a>
         
-        
-          <a href="../terminal_common_fastq_tasks/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Common FASTQ file tasks
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
