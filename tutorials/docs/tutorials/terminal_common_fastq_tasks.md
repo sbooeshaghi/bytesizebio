@@ -1,15 +1,13 @@
 <a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/notebooks/terminal_common_fastq_tasks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# Common FASTQ tasks
+# Common FASTQ file tasks
 
 FASTQ files are text files that contain biological sequences, usually nucleotides, and their associated quality scores. Often we'd like to perform various tasks on the files such as:
 
 
 
-1.   finding the reverse complement,
-2.   performing advanced sequence searching,
-3.   converting FASTQ files to other formats,
-4.    
+1.   extracting just the sequences,
+2.   finding the reverse complement
 
 ----------------
 **tl;dr** In this tutorial we introduce more advanced ways to manipulate and interact with FASTQ files
@@ -30,15 +28,18 @@ ls -lht
 ```
 
     total 434M
-    -rw-r--r-- 1 root root 247M Jan  5 19:34 read2.fastq
-    -rw-r--r-- 1 root root 188M Jan  5 19:34 read1.fastq
+    -rw-r--r-- 1 root root 247M Jan  5 23:12 read2.fastq
+    -rw-r--r-- 1 root root 188M Jan  5 23:11 read1.fastq
     drwxr-xr-x 1 root root 4.0K Dec 21 17:29 sample_data
 
 
 The `curl` command uses three options: 
+
 1.    `-L` tells curl to follow any redirects in case the file was moved,
-2.    `-s` tells curl to not print any logging information (i.e. the command is silent),
+2.   `-s` tells curl to not print any logging information (i.e. the command is silent),
 3.    and the `-o` specifies the new name of the file to be saved to our machine.
+
+
 
 ## Printing out only sequences
 
