@@ -1,4 +1,4 @@
-<a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/staging/terminal_interacting_with_fastq_files.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/sbooeshaghi/bytesizebio/blob/main/tutorials/notebooks/terminal_interacting_with_fastq_files.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Interacting with FASTQ files
 
@@ -205,8 +205,3 @@ Let's find out the line numbers where we found our sequence.
 ## Summary
 
 In this tutorial we learned how to interact with FASTQ files using built in shell commands to perform simple tasks. 
-
-
-```
-
-```
